@@ -133,7 +133,7 @@ def add_water(ml: int) -> None:
     """Log water and trigger milestone feedback if a new one is reached."""
     if ml <= 0:
         return
-   st.session_state.log.append({"time": datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%I:%M %p"), "ml": int(ml)})
+    st.session_state.log.append({"time": datetime.now(ZoneInfo("Asia/Kolkata")).strftime("%I:%M %p"), "ml": int(ml)})
 
     pct = calculate_percentage(calculate_total(st.session_state.log), st.session_state.goal)
     milestone = get_milestone(pct)
